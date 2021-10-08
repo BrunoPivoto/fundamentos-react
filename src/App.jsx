@@ -1,88 +1,92 @@
 import './App.css'
 import React from 'react'
 
-import FamiliaMembro from './components/basicos/FamiliaMembro'
-import Familia from './components/basicos/Familia'
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+
+// Be sure to include styles at some point, probably during your bootstraping
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+
+import { Navigation } from 'react-minimal-side-navigation';
+import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
+
 import Card from './components/layout/Card'
-import Aleatorio from './components/basicos/Aleatorio'
-import Primeiro from './components/basicos/Primeiro'
-import ComParametro from './components/basicos/ComParametro'
-import Fragmento from './components/basicos/Fragmento'
-import ListaAlunos from './components/repeticao/ListaAlunos'
-import TabelaProdutos from './components/repeticao/TabelaProdutos'
-import ParOuImpar from './components/condicional/ParOuImpar'
-import UsuarioInfo from './components/condicional/UsuarioInfo'
-import DiretaPai from './components/comunicacao/DiretaPai'
-import IndiretaPai from './components/comunicacao/IndiretaPai'
-import Input from './components/formulario/Input'
-import Contador from './components/contador/Contador'
+
+import prod1 from './imagens/produto1.jpg'
+import prod2 from './imagens/produto2.jpg'
+import prod3 from './imagens/produto3.jpeg'
+import prod4 from './imagens/produto4.jpeg'
+import prod5 from './imagens/produto5.jpeg'
+import prod6 from './imagens/produto6.jpeg'
+import dashboard from './imagens/dash.png'
+import cliente from './imagens/cliente.png'
 
 export default () => (
     <div className="App">
-        <h1>Fundamentos React</h1>
-
+        <h1>Elas Irmãs (e Bruno)</h1>
+        <SideNav className="SideBar"
+            onSelect={( selected ) => {
+                // Add your code here
+            }}
+        >
+            <SideNav.Toggle />
+            <SideNav.Nav defaultSelected="home">
+                <NavItem eventKey="home">
+                    <NavIcon>
+                        <i className="icon" style={{ fontSize: '1.75em' }} />
+                    </NavIcon>
+                    <NavText>
+                        Home
+                    </NavText>
+                </NavItem>
+                <NavItem eventKey="cliente">
+                    <NavIcon>
+                    </NavIcon>
+                    <NavText>
+                        Cliente
+                    </NavText>
+                    <NavItem eventKey="cliente/perfil">
+                        <NavText>
+                            Perfil
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="cliente/pedidos">
+                        <NavText>
+                            Pedidos
+                        </NavText>
+                    </NavItem>
+                </NavItem>
+                <NavItem eventKey="sair">
+                    <NavIcon>
+                    </NavIcon>
+                    <NavText>
+                        Sair
+                    </NavText>
+                </NavItem>
+            </SideNav.Nav>
+        </SideNav>
         <div className="Cards">
-            <Card titulo="Exemplo de Contador" color='#179'>
-                <Contador numIni={10} passo={1}></Contador>
-            </Card>
-            <Card titulo="Exemplo de Componente Controlado" color='#175'>
-                <Input></Input>
+            <Card titulo="Pulseira" color='#FFA500' preco={19.90} >
+                <img src={prod1} alt="" width='37.5%' />
             </Card>
 
-            <Card titulo="Exemplo de Comunicação Indireta" color='#105'>
-                <IndiretaPai></IndiretaPai>
+            <Card titulo="Colar" color='#FFA500' preco={30.00}>
+                <img src={prod2} alt="" width='24.5%' />
             </Card>
 
-            <Card titulo="Exemplo de Comunicação Direta" color='#505'>
-                <DiretaPai></DiretaPai>
+            <Card titulo="Pingente" color='#FFA500' preco={15.99}>
+                <img src={prod3} alt="" width='30%' />
             </Card>
 
-            <Card titulo="Exemplo de Condicional" color='#315'>
-                <ParOuImpar numero={20}></ParOuImpar>
-                <UsuarioInfo usuario={{ nome: 'Bruno' }}></UsuarioInfo>
-                <UsuarioInfo ></UsuarioInfo>
-                <UsuarioInfo usuario={{ email: 'Bruno' }}></UsuarioInfo>
+            <Card titulo="Colar Caranguejo" color='#FFA500' preco={10.00}>
+                <img src={prod4} alt="" width='25%' />
             </Card>
 
-            <Card titulo="Exemplo de Repetição" color='#585'>
-                <TabelaProdutos>
-
-                </TabelaProdutos>
+            <Card titulo="Coleira" color='#FFA500' preco={25.50}>
+                <img src={prod5} alt="" width='35%' />
             </Card>
 
-            <Card titulo="Exemplo de Repetição" color='#585'>
-                <ListaAlunos>
-
-                </ListaAlunos>
-            </Card>
-
-            <Card titulo="Exemplo de Familia" color='#180'>
-                <Familia sobrenome="Pivoto">
-                    <FamiliaMembro nome="Bruno" />
-                    <FamiliaMembro nome="José" />
-                    <FamiliaMembro nome="Jaqueline" />
-                </Familia>
-
-            </Card>
-
-            <Card titulo="Exemplo de Card" color='#850'>
-                <Aleatorio min={10} max={50}></Aleatorio>
-            </Card>
-
-            <Card titulo="Exemplo de Fragmento" color='#508'>
-                <Fragmento />
-            </Card>
-
-            <Card titulo="Exemplo de Parametro" color='#100'>
-                <ComParametro
-                    titulo="Situação do Bruno"
-                    subtitulo="Chorando"
-                    nota={10.0}
-                />
-            </Card>
-
-            <Card titulo="Exemplo de Componente">
-                <Primeiro />
+            <Card titulo="Pulseira de Praia" color='#FFA500' preco={18.90}>
+                <img src={prod6} alt="" width='35%' />
             </Card>
         </div>
     </div>
