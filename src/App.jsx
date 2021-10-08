@@ -1,23 +1,19 @@
 import './App.css'
 import React from 'react'
 
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
-import { Navigation } from 'react-minimal-side-navigation';
-import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
-
 import Card from './components/layout/Card'
-
 import prod1 from './imagens/produto1.jpg'
 import prod2 from './imagens/produto2.jpg'
 import prod3 from './imagens/produto3.jpeg'
 import prod4 from './imagens/produto4.jpeg'
 import prod5 from './imagens/produto5.jpeg'
 import prod6 from './imagens/produto6.jpeg'
-import dashboard from './imagens/dash.png'
+import home from './imagens/home.png'
 import cliente from './imagens/cliente.png'
 
 export default () => (
@@ -25,14 +21,14 @@ export default () => (
         <h1>Elas Irmãs (e Bruno)</h1>
         <SideNav className="SideBar"
             onSelect={( selected ) => {
-                // Add your code here
+                console.log( 'Teste' )
             }}
         >
             <SideNav.Toggle />
             <SideNav.Nav defaultSelected="home">
                 <NavItem eventKey="home">
                     <NavIcon>
-                        <i className="icon" style={{ fontSize: '1.75em' }} />
+                        <img src={home} alt="" width="50%" />
                     </NavIcon>
                     <NavText>
                         Home
@@ -40,6 +36,7 @@ export default () => (
                 </NavItem>
                 <NavItem eventKey="cliente">
                     <NavIcon>
+                        <img src={cliente} alt="" width="50%" />
                     </NavIcon>
                     <NavText>
                         Cliente
