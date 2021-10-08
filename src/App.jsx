@@ -63,27 +63,27 @@ export default () => (
         </SideNav>
         <div className="Cards">
             <Card titulo="Pulseira" color='#FFA500' preco={19.90} >
-                <img src={prod1} alt="" width='37.5%' />
+                <img src={prod1} alt="" width='45%' />
             </Card>
 
             <Card titulo="Colar" color='#FFA500' preco={30.00}>
-                <img src={prod2} alt="" width='24.5%' />
+                <img src={prod2} alt="" width='35%' />
             </Card>
 
             <Card titulo="Pingente" color='#FFA500' preco={15.99}>
-                <img src={prod3} alt="" width='30%' />
+                <img src={prod3} alt="" width='40%' />
             </Card>
 
             <Card titulo="Colar Caranguejo" color='#FFA500' preco={10.00}>
-                <img src={prod4} alt="" width='25%' />
+                <img src={prod4} alt="" width='45%' />
             </Card>
 
             <Card titulo="Coleira" color='#FFA500' preco={25.50}>
-                <img src={prod5} alt="" width='35%' />
+                <img src={prod5} alt="" width='45%' />
             </Card>
 
             <Card titulo="Pulseira de Praia" color='#FFA500' preco={18.90}>
-                <img src={prod6} alt="" width='35%' />
+                <img src={prod6} alt="" width='45%' />
             </Card>
         </div>
     </div>
